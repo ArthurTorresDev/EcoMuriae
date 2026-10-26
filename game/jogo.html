@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoMuriaé – Jogando</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="pagina-jogo">
+<!-- ========== CABEÇALHO COM HUD ========== -->
+  <header class="cabecalho">
+<!-- Logo menor no canto -->
+    <div class="logo-area">
+      <img src="../img/EcoMuriae.png" alt="Logo EcoMuriaé" class="logo-img" />
+    </div>
+<!-- HUD: pontuação + timer -->
+    <div class="hud">
+      <div class="placar-hud">
+        <span class="hud-label">Pontuação</span>
+        <span class="hud-valor" id="pontuacao-valor">0</span>
+      </div>
+<!-- Timer em formato de círculo (sem SVG) -->
+<!-- O script.js troca a cor de fundo (classe "urgente") quando o tempo está acabando -->
+      <div class="timer-bloco" id="timer-bloco">
+        <span class="timer-numero" id="timer-valor">10</span>
+      </div>
+    </div>
+<!-- /hud -->
+  </header>
+<!-- ========== CONTEÚDO DO JOGO ========== -->
+  <main class="main-jogo">
+<!-- Barra de progresso (quantos resíduos já foram classificados) -->
+    <div class="progresso-area">
+      <span class="progresso-texto" id="progresso-texto">1 / 20</span>
+      <div class="barra-progresso">
+        <div class="barra-preenchimento" id="barra-preenchimento"></div>
+      </div>
+    </div>
+<!-- Arena: card do resíduo + mensagem de feedback -->
+    <div class="arena">
+      <p class="instrucao">Arraste para a lixeira correta!</p>
+<!-- Card arrastável — o jogador arrasta este elemento -->
+      <div class="residuo-card"
+id="residuo-card"
+draggable="true"
+role="img"
+aria-label="Resíduo para classificar">
+        <span class="residuo-emoji" id="residuo-emoji">🗞️</span>
+        <span class="residuo-nome"  id="residuo-nome">Jornal</span>
+      </div>
+<!-- Feedback de acerto / erro / tempo esgotado -->
+<!-- A classe 'oculto' é removida pelo JS quando há resposta -->
+      <div class="feedback oculto" id="feedback">
+        <span id="feedback-texto"></span>
+      </div>
+    </div>
+<!-- /arena -->
+<!-- Lixeiras da coleta seletiva -->
+<!-- data-categoria: o JS compara com o resíduo para saber se acertou -->
+<!-- Durante o jogo NÃO aparece o nome — só a cor da lixeira -->
+    <div class="lixeiras-container">
+      <div class="lixeira papel"
+data-categoria="papel"
+role="button"
+tabindex="0"
+aria-label="Lixeira Azul – Papel">
+        <div class="lixeira-img-caixa">
+          <img class="lixeira-img" src="../img/lixeira_azul.png" alt="Lixeira Azul" />
+        </div>
+      </div>
+      <div class="lixeira plastico"
+data-categoria="plastico"
+role="button"
+tabindex="0"
+aria-label="Lixeira Vermelha – Plástico">
+        <div class="lixeira-img-caixa">
+          <img class="lixeira-img" src="../img/lixeira_vermelha.png" alt="Lixeira Vermelha" />
+        </div>
+      </div>
+      <div class="lixeira vidro"
+data-categoria="vidro"
+role="button"
+tabindex="0"
+aria-label="Lixeira Verde – Vidro">
+        <div class="lixeira-img-caixa">
+          <img class="lixeira-img" src="../img/lixeira_verde.png" alt="Lixeira Verde" />
+        </div>
+      </div>
+      <div class="lixeira metal"
+data-categoria="metal"
+role="button"
+tabindex="0"
+aria-label="Lixeira Amarela – Metal">
+        <div class="lixeira-img-caixa">
+          <img class="lixeira-img" src="../img/lixeira_amarela.png" alt="Lixeira Amarela" />
+        </div>
+      </div>
+    </div>
+<!-- /lixeiras-container -->
+  </main>
+<!-- Botão para abandonar e voltar ao início -->
+  <div class="rodape-jogo">
+    <a href="index.html" class="btn-voltar" id="btn-voltar">← Voltar ao início</a>
+  </div>
+<!-- JS exclusivo da página do jogo -->
+  <script src="jogo.js"></script>
+</body>
+</html>

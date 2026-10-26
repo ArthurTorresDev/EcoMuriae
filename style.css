@@ -1,0 +1,657 @@
+/* ==================================================
+   RESET
+================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+    background:#f5f5f5;
+    color:#222;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header{
+    position:absolute;
+    top:35px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    max-width:1200px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border:2px solid #fff;
+    border-radius:50px;
+
+    padding:1px 25px;
+
+    z-index:100;
+}
+
+.logo img{
+    width: 70%;
+}
+
+.menu{
+    display:flex;
+    gap:35px;
+}
+
+.menu a{
+    color:white;
+    font-size:1.3rem;;
+    transition:.3s;
+}
+
+.menu a:hover{
+    opacity:.7;
+}
+
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.hero-green{
+    background:#15a46b;
+}
+
+.hero-beige{
+    background:#fde6a9;
+    min-height:90vh;
+    padding-top: 90px;
+}
+.hero-beige .hero-content{
+    position: relative;
+    top: -100px;
+}
+.hero-content{
+    width:min(1200px,92%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-illustration{
+    width:auto;
+    height: auto;
+    display:flex;
+    justify-content:center;
+    margin-bottom:0px;
+}
+
+.hero-illustration-game{
+    width:auto;
+    height: auto;
+    display:flex;
+    justify-content:center;
+    margin-bottom:0px;
+}
+
+.hero-illustration-game img{
+    width: 1000px;
+}
+
+
+.hero-illustration img{
+    width: 850px;
+}
+
+.hero-text{
+    text-align:center;
+    width:100%;
+}
+
+.hero-title{
+    font-family:'Bree Serif',serif;
+    font-size:clamp(3rem,8vw,7rem);
+    color:#fff5b7;
+    text-transform:uppercase;
+    line-height:1;
+    text-shadow:4px 4px 0 rgba(0,0,0,.15);
+    margin-top: 50px;
+
+    position: relative;
+    top: 80px; /* desce o CALCULAR */
+}
+
+.hero-subtitle{
+    font-family:'Bree Serif',serif;
+    font-size:clamp(2.2rem,6vw,5rem);
+    color:white;
+    font-style:italic;
+
+    position: relative;
+    top: -70px; /* sobe PEGADA AMBIENTAL */
+}
+
+.hero-title.blue{
+    color:#1f449f;
+    text-shadow:
+    4px 4px 0 rgba(0,0,0,.12); 
+    font-size:clamp(3.5rem,8vw,7.5rem);
+    position: relative;
+    top: 50px;
+    z-index: 10;
+}
+
+
+
+.hero-bottom{
+    margin-top:30px;
+
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    gap:60px;
+    align-items:center;
+
+    position: relative;
+    top: -70px;
+}
+
+.hero-bottom p{
+    color:white;
+    font-weight:400;
+    font-size:1.95rem;
+}
+
+.hero-beige .hero-bottom p{
+    color:#1f449f;
+}
+
+.btn-primary{
+    background:#efebe5;
+    color:#222;
+
+    border-radius:40px;
+
+    padding:20px 55px;
+
+    font-weight:700;
+    font-size:.95rem;
+
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+}
+
+/* ==================================================
+   PLACEHOLDER IMAGENS
+================================================== */
+
+.placeholder-image{
+    width:150%;
+    max-width:850px;
+    min-height:500px;
+
+    
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:700;
+
+    border-radius:20px;
+
+  
+}
+
+/* ==================================================
+   DECORAÇÕES
+================================================== */
+
+.decor{
+    position:absolute;
+    color:#111;
+    font-size:3rem;
+    opacity:.7;
+}
+
+.decor-left-top{
+    top:120px;
+    left:50px;
+}
+
+.decor-right-bottom{
+    right:60px;
+    bottom:120px;
+}
+
+/* ==================================================
+   SUSTENTABILIDADE
+================================================== */
+
+.sustentabilidade{
+    background:#d97776;
+    padding:90px 0;
+}
+
+.sustentabilidade h2{
+    text-align:center;
+    color:white;
+
+    font-family:'Bree Serif',serif;
+    font-size:3rem;
+    font-weight:400;
+
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+
+    border-radius:14px;
+
+    padding:22px;
+
+    min-height:280px;
+
+    box-shadow:
+    0 10px 20px rgba(0,0,0,.08);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 20px 30px rgba(0,0,0,.15);
+}
+
+.card-tag{
+    display:block;
+
+    color:#3ca67b;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+    text-align:center;
+}
+
+.card p{
+    font-size:.95rem;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+.frase-impacto{
+    margin-top:50px;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+}
+
+/* ==================================================
+   NOSSA CIDADE
+================================================== */
+
+.cidade{
+    background:#7ea4e2;
+    padding-top:80px;
+    padding-bottom: 0px;
+}
+
+.cidade-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.cidade h2{
+    font-family:'Bree Serif',serif;
+    color:#f5e8a7;
+    font-size:4.5rem;
+    margin-bottom:25px;
+}
+
+.cidade p{
+    color:white;
+    line-height:1.8;
+    margin-bottom:15px;
+    font-size: 1.5rem;
+}
+
+.cidade a{
+    color:#c60000;
+    font-weight:700;
+}
+
+.cidade a:hover{
+    text-decoration: underline;
+}
+
+.demsur-imagem {
+    min-height:200px;
+    position: relative;
+}
+
+.demsur-logo {
+       position: absolute;
+
+    width: 120px; /* diminui o tamanho */
+
+    left: -20px;
+    bottom: 20px;
+
+    z-index: 10;
+}
+
+/* ==================================================
+   COOPET
+================================================== */
+
+.coopet{
+    background:#7ea4e2;
+    padding-bottom:100px;
+}
+
+.coopet-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.coopet h2{
+    color:white;
+    margin-bottom:25px;
+    font-size:2.5rem;
+}
+
+.coopet p{
+    color:white;
+    line-height:1.8;
+    margin-bottom:15px;
+    font-size: 1.5rem;
+}
+
+.coopet a{
+    color:#d90000;
+    font-weight:700;
+}
+
+.coopet a:hover{
+    text-decoration: underline;
+}
+
+.coopet-imagem {
+    min-height:300px;
+}
+
+/* ==================================================
+   FOOTER GERAL & CONTAINER DO RODAPÉ (ESTILO RUBEUS)
+================================================== */
+
+.footer{
+    background:#ececec;
+    text-align:center;
+    padding:60px 20px 100px;
+}
+
+.footer h2{
+    font-family:'Bree Serif',serif;
+    font-size:3rem;
+    color:#5b2a2a;
+    margin-bottom:25px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer img{
+    height: 60px;
+}
+
+.btn-primary-footer{
+    background:#cfcfcf;
+    color:#222;
+    border-radius:40px;
+    padding:20px 55px;
+    font-weight:700;
+    font-size:.95rem;
+    transition:.3s;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.btn-primary-footer:hover{
+    transform:translateY(-4px);
+}
+
+/* A Caixa Interna Arredondada */
+.footer .footer-video {
+    width: min(1200px, 95%);
+    margin: 50px auto 0;
+    background-color: #cfcfcf; /* Verde Escuro */
+    border-radius: 40px;
+    padding: 55px 45px;
+    height: auto; /* Remove os 450px fixos para não cortar conteúdo */
+    text-align: left;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* O Grid de 4 Colunas */
+.footer .footer-box-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+}
+
+/* Alinhamento de cada bloco */
+.footer .footer-box-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer .footer-box-col h3 {
+    font-family: 'Bree Serif', serif;
+    font-size: 1.2rem;
+    color: #fff5b7; /* Amarelo Destaque */
+    margin: 0 0 18px 0;
+}
+
+.footer .footer-box-col .brand-title {
+    font-size: 1.9rem;
+    color: #222;   ;
+}
+
+.footer .footer-box-col .brand-text {
+    color: #222;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* RESET TOTAL DAS LISTAS (Tira as bolinhas indesejadas) */
+.footer .footer-box-col ul {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .footer-box-col li {
+    list-style: none;
+    list-style-type: none;
+    margin-bottom: 12px;
+    padding: 0;
+    font-size: 0.95rem;
+    color: #222;;
+}
+
+/* Links internos e transições */
+.footer .footer-box-col a {
+    color: #222;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.footer .footer-box-col a:hover {
+    color: #3ca67b;
+    transform: translateX(4px);
+}
+
+
+/* ==================================================
+   MEDIA QUERIES (ORGANIZADOS FORA DE OUTRAS CLASSES)
+================================================== */
+
+@media(max-width:992px){
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cidade-grid,
+    .coopet-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-bottom{
+        grid-template-columns:1fr;
+    }
+
+    .hero-bottom p{
+        text-align:center;
+    }
+
+    /* Rodapé com 2 colunas em tablets */
+    .footer .footer-box-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media(max-width:768px){
+    .menu{
+        display:none;
+    }
+
+    .hero{
+        padding:120px 0 60px;
+    }
+
+    .hero-title{
+        font-size:3rem;
+    }
+
+    .hero-subtitle{
+        font-size:2rem;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .sustentabilidade h2,
+    .cidade h2,
+    .footer h2{
+        font-size:2.2rem;
+    }
+
+    .btn-primary{
+        width:100%;
+        max-width:320px;
+        margin:auto;
+    }
+
+    /* Ajustes do rodapé para celular */
+    .footer .footer-video {
+        padding: 40px 20px;
+        border-radius: 25px;
+    }
+
+    .footer .footer-box-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer .footer-box-col {
+        align-items: center;
+    }
+
+    .footer .footer-box-col h3,
+    .footer .footer-box-col ul,
+    .footer .footer-box-col li {
+        text-align: center;
+    }
+    
+    .footer .footer-box-col a:hover {
+        transform: none;
+    }
+}
+
+@media(max-width:480px){
+    .logo{
+        font-size:.7rem;
+    }
+
+    .header{
+        padding:10px 15px;
+    }
+
+    .placeholder-image{
+        min-height:220px;
+    }
+
+    .footer{
+        padding-bottom:60px;
+    }
+}

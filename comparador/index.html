@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitor Ambiental Global 3D</title>
+  
+  <script src="https://unpkg.com/three"></script>
+  <script src="https://unpkg.com/globe.gl"></script>
+  
+  <link rel="stylesheet" href="style.css?v=2026">
+</head>
+<body>
+
+  <div id="id-da-sua-div-do-planeta"></div>
+
+  <div class="interface-container">
+    <header>
+      <h1>EcoGlobe 3D</h1>
+      <p>Pegada ecológica real por país (gha/pessoa). Passe o mouse sobre qualquer país para ver os dados. Use o mouse para girar e dar zoom.</p>
+    </header>
+
+    <div class="legenda">
+      <h3>Pegada Ecológica (gha/pessoa)</h3>
+      <div class="escala-gradiente"></div>
+      <div class="escala-labels">
+        <span>Baixa</span>
+        <span>Média</span>
+        <span>Alta</span>
+        <span>Crítica</span>
+      </div>
+      <div class="item-legenda" style="margin-top:10px;">
+        <div class="cor-box" style="background-color:#dc2626;"></div>
+        <span>Ponto crítico — Desmatamento</span>
+      </div>
+      <div class="item-legenda">
+        <div class="cor-box" style="background-color:#d97706;"></div>
+        <span>Ponto crítico — CO₂ / Poluição</span>
+      </div>
+      <div class="fonte">Fonte: Global Footprint Network</div>
+    </div>
+  </div>
+  
+  <div class="card-lateral-oposto">
+    <h2>Ranking da Pegada Ecológica</h2>
+    <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">
+      Clique num país para focar o globo nele.
+    </p>
+    
+    <!-- O JavaScript vai injetar a lista ordenada exatamente aqui dentro -->
+    <div id="lista-paises" style="max-height: 40vh; overflow-y: auto; margin-bottom: 15px; border-radius: 8px; background: rgba(0,0,0,0.2); padding: 5px;"></div>
+    
+    <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin: 15px 0;">
+    
+    <h2>Legenda de Cores</h2>
+    <div class="legenda-item"><div class="legenda-cor" style="background: #dc2626;"></div><span>Crítica (&gt; 8 gha/pess)</span></div>
+    <div class="legenda-item"><div class="legenda-cor" style="background: #ea580c;"></div><span>Alta (5 a 8 gha/pess)</span></div>
+    <div class="legenda-item"><div class="legenda-cor" style="background: #eab308;"></div><span>Média (2.7 a 5 gha/pess)</span></div>
+    <div class="legenda-item"><div class="legenda-cor" style="background: #16a34a;"></div><span>Baixa (&lt; 2.7 gha/pess)</span></div>
+    <div class="legenda-item"><div class="legenda-cor" style="background: #f1f5f9; border: 1px solid #94a3b8;"></div><span>Antártida / Sem Dados</span></div>
+</div>
+
+  <script src="script.js?v=2026"></script>
+</body>
+</html>

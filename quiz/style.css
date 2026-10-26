@@ -1,0 +1,410 @@
+/* ============================================================
+   STYLE.CSS - Quiz de Pegada Ecológica - Projeto EcoMuriaé
+   Estilo visual: tons de verde, cantos arredondados, "cartoon moderno"
+   ============================================================ */
+
+
+/* Reset bem simples: remove margem e padding padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Estilo geral do corpo da página */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e7f3df; /* verde bem clarinho de fundo */
+  color: #2f4f33; /* verde escuro para os textos */
+}
+
+
+/* Container que centraliza o conteúdo na tela */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+
+/* O "cartão" branco onde fica todo o conteúdo da página */
+.cartao {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Asans-serif';
+  font-size: 16px;
+  margin-top: 40px;
+  margin-bottom: 160px;
+}
+
+
+
+/* Logo do EcoMuriaé no topo do cartão */
+.logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 200px; /* tamanho da logo */
+  height: auto;
+}
+
+/* Títulos principais (h1) */
+h1 {
+  color: #3c8c3f; /* verde principal */
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+/* Subtítulos (h2) */
+h2 {
+  color: #3c8c3f;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+/* Parágrafos de texto */
+p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ─────────────────────────────────────────────────────
+   CABEÇALHO  (compartilhado pelas 3 páginas)
+   ───────────────────────────────────────────────────── */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  background-color: #2d9e5f; /* verde escuro */
+}
+
+.logo-img {
+  height: 42px;
+  width: auto;
+}
+
+.btn-voltar {
+  display: inline-block;
+  color: #000000;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-voltar:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+/* ─────────────────────────────────────────────────────
+   RODAPÉ  (compartilhado)
+   ───────────────────────────────────────────────────── */
+.rodape {
+  background-color: #2d9e5f;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.75rem;
+  margin-top: auto; /* empurra o rodapé para o final da página */
+}
+
+/* ------------------------------------------------------------
+   BOTÕES
+   ------------------------------------------------------------ */
+
+/* Botão principal (verde, usado para avançar / iniciar) */
+.botaoPrincipal {
+  background-color: #3c8c3f;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.botaoPrincipal:hover {
+  background-color: #2f6e31;
+}
+
+
+/* Botão secundário (bege, usado para o botão "Voltar") */
+.botaoSecundario {
+  background-color: #f3ead7;
+  color: #3c8c3f;
+  border: 2px solid #3c8c3f;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.botaoSecundario:hover {
+  background-color: #ebe0c6;
+}
+
+
+/* Linha que organiza os botões "Voltar" e "Próxima pergunta" lado a lado */
+.areaBotoesNavegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.areaBotoesNavegacao .botaoPrincipal {
+  width: auto;
+  flex: 1;
+}
+
+
+/* ------------------------------------------------------------
+   ALTERNATIVAS DO QUIZ
+   ------------------------------------------------------------ */
+
+   #progressoTexto{
+    font-size: 14px;
+   }
+   #textoPergunta{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Arial Rounded MT Bold', Arial, Helvetica, sans-serif;
+   }
+
+/* Área onde os botões de alternativa (resposta) aparecem */
+.areaAlternativas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+/* Cada botão de alternativa de resposta */
+.botaoAlternativa {
+  background-color: #f3ead7; /* bege claro */
+  color: #2f4f33;
+  border: 2px solid #d8cba9;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+
+.botaoAlternativa:hover {
+  background-color: #ebe0c6;
+}
+
+
+/* Estilo do botão quando a alternativa está selecionada pelo usuário */
+.botaoSelecionado {
+  background-color: #3c8c3f;
+  color: #ffffff;
+  border: 2px solid #2f6e31;
+}
+
+
+/* ------------------------------------------------------------
+   BARRA DE PROGRESSO
+   ------------------------------------------------------------ */
+
+/* Fundo (trilho) da barra de progresso */
+.barraProgressoFundo {
+  background-color: #e0ead4;
+  border-radius: 10px;
+  width: 100%;
+  height: 14px;
+  margin-bottom: 20px;
+}
+
+
+/* Parte preenchida da barra de progresso, cresce conforme o usuário avança */
+.barraProgressoPreenchida {
+  background-color: #3c8c3f;
+  height: 100%;
+  border-radius: 10px;
+  width: 0%;
+}
+
+
+/* ------------------------------------------------------------
+   PÁGINA DE RESULTADO
+   ------------------------------------------------------------ */
+
+
+   /* Container que organiza o conteúdo na tela de resultado*/
+.container-resultado {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+
+/* O "cartão" branco onde fica todo o conteúdo da página */
+.cartao-resultado {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 20px 110px 40px 370px 90px;
+  gap:20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Asans-serif';
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/* Bloco verde de destaque com a pegada total */
+.blocoDestaque {
+  display: flex;
+  flex-direction: column;
+  background-color: #3c8c3f;
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  justify-content: center;
+  grid-column: 1 / span 1; /* ocupa as duas colunas do grid */
+  grid-row: 2 / span 3; /* ocupa a primeira linha do grid */
+}
+
+.titulo-resultado {
+  color: #3c8c3f;
+  font-size: 28px;
+  margin-bottom: 20px;
+  grid-column:1;
+}
+
+.titulo-res-tema {
+  color: #3c8c3f;
+  font-size: 28px;
+  margin-bottom: 20px;
+  grid-column:2;
+  grid-row:3;
+}
+
+.blocoDestaque h2 {
+  color: #ffffff;
+  font-size: 32px;
+}
+
+.blocoDestaque p {
+  color: #ffffff;
+}
+
+
+/* Texto da classificação (ex: "Próximo da média brasileira") */
+.textoClassificacao {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+
+/* Linha com os dois quadrinhos de comparação (média e biocapacidade) */
+.blocoComparacao {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  grid-column: 2; /* ocupa as duas colunas do grid */
+  grid-row: 2 / span 1; /* ocupa a segunda linha do grid */
+}
+
+
+/* Cada quadrinho de comparação */
+.itemComparacao {
+  background-color: #f3ead7;
+  border-radius: 12px;
+  padding: 15px;
+  flex: 1;
+  text-align: center;
+}
+
+.itemComparacao h2 {
+  font-size: 22px;
+  color: #3c8c3f;
+}
+
+
+/* Texto do percentual em relação à média brasileira */
+.textoPercentual {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+/* Cada bloco de tema no ranking de maior impacto */
+#areaRanking {
+  grid-column: 2; /* ocupa as duas colunas do grid */
+  grid-row: 4 / span 1; /* ocupa a quarta linha do grid */
+}
+
+.botoes-resultado {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  grid-column:1 / span 2;
+  grid-row: 5 / span 1;
+}
+.blocoTema {
+  background-color: #f3ead7;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.blocoTema h2 {
+  text-align: left;
+  font-size: 18px;
+  color: #3c8c3f;
+  margin-bottom: 8px;
+}
+
+.blocoTema p {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+
+/* ------------------------------------------------------------
+   RESPONSIVIDADE BEM SIMPLES (telas pequenas, tipo celular)
+   ------------------------------------------------------------ */
+@media (max-width: 480px) {
+
+  .cartao {
+    padding: 20px;
+  }
+
+  .blocoComparacao {
+    flex-direction: column;
+  }
+
+}

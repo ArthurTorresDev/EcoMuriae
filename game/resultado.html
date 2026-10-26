@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoMuriaé – Resultado</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="pagina-resultado">
+
+  <!-- ========== CABEÇALHO ========== -->
+  <header class="cabecalho">
+    <div class="logo-area">
+      <img src="../img/EcoMuriae.png" alt="Logo EcoMuriaé" class="logo-img" />
+    </div>
+  </header>
+
+  <!-- ========== RESULTADO ========== -->
+  <main class="main-resultado">
+
+    <div class="card-resultado">
+
+      <!-- Ícone dinâmico (🏆 / 🌱 / ♻️) definido pelo JS -->
+      <div class="resultado-icone" id="resultado-icone">🏆</div>
+
+      <h1 class="resultado-titulo">Jogo Concluído!</h1>
+
+      <!-- Grade com as 4 estatísticas da partida -->
+      <div class="stats-grid">
+
+        <div class="stat-card stat-pts">
+          <span class="stat-label">Pontuação</span>
+          <span class="stat-valor" id="stat-pontuacao">0</span>
+        </div>
+
+        <div class="stat-card stat-ok">
+          <span class="stat-label">✅ Acertos</span>
+          <span class="stat-valor" id="stat-acertos">0</span>
+        </div>
+
+        <div class="stat-card stat-err">
+          <span class="stat-label">❌ Erros</span>
+          <span class="stat-valor" id="stat-erros">0</span>
+        </div>
+
+        <div class="stat-card stat-time">
+          <span class="stat-label">⏰ Tempos</span>
+          <span class="stat-valor" id="stat-timeouts">0</span>
+        </div>
+
+      </div>
+      <!-- /stats-grid -->
+
+      <!-- Mensagem personalizada baseada no desempenho -->
+      <p class="resultado-mensagem" id="resultado-mensagem"></p>
+
+      <!-- Botões de navegação -->
+      <div class="resultado-botoes">
+
+        <!-- Jogar novamente → volta direto para jogo.html e reinicia -->
+        <a href="jogo.html" class="btn-primario">🔄 Jogar Novamente</a>
+
+        <!-- Voltar à tela inicial -->
+        <a href="index.html" class="btn-secundario">🏠 Início</a>
+
+      </div>
+
+    </div>
+    <!-- /card-resultado -->
+
+  </main>
+
+  <!-- ========== RODAPÉ ========== -->
+  <footer class="rodape">
+    <p>EcoMuriaé &copy; 2026 &nbsp;·&nbsp; Educação Ambiental para Muriaé</p>
+  </footer>
+
+  <!-- JS exclusivo da página de resultado -->
+  <script src="resultado.js"></script>
+
+</body>
+</html>

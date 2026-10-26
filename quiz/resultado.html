@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoMuriaé - Seu Resultado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="mostrarResultado()">
+
+  <header class="cabecalho">
+    <div class="logo-area">
+      <img src="../img/EcoMuriae.png" alt="Logo EcoMuriaé" class="logo-img" />
+    </div>
+  </header>
+
+  <div class="container-resultado">
+
+    <div class="cartao-resultado">
+
+      <h1 class="titulo-resultado">Seu resultado</h1>
+
+      <div class="blocoDestaque">
+        <p>Sua Pegada Ecológica</p>
+        <h2 id="valorPegadaTotal"></h2>
+        <p id="valorClassificacao" class="textoClassificacao"></p>
+        <p id="valorPercentual" class="textoPercentual"></p>
+      </div>
+
+      <div class="blocoComparacao">
+        <div class="itemComparacao">
+          <p>🇧🇷 Média brasileira</p>
+          <h2 id="valorMediaBrasileira"></h2>
+        </div>
+        <div class="itemComparacao">
+          <p>🌎 Biocapacidade brasileira</p>
+          <h2 id="valorBiocapacidade"></h2>
+        </div>
+      </div>
+
+      
+
+      <h2 class="titulo-res-tema">Temas que mais impactaram sua pegada</h2>
+
+      <!-- Aqui o ranking dos 3 temas e as recomendações são criados pelo script.js -->
+      <div id="areaRanking"></div>
+      <div class="botoes-resultado">
+      <button class="botaoPrincipal" onclick="iniciarQuiz()">Refazer quiz</button>
+      <button class="botaoPrincipal" onclick="location.href='../comparador/index.html'">Comparar Resultado</button>
+      <button class="botaoPrincipal" onclick="location.href='../index.html'">Página inicial</button>
+      </div>
+    </div>
+
+  </div>
+
+    <footer class="rodape">
+    <p>EcoMuriaé &copy; 2026 &nbsp;·&nbsp; Educação Ambiental para Muriaé</p>
+    </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,617 @@
+/* =====================================================
+   EcoMuriaé – Coleta Seletiva | style.css
+   CSS compartilhado pelas 3 páginas do projeto.
+   (versão simplificada, sem variáveis CSS, sem SVG)
+   ===================================================== */
+
+
+/* ─────────────────────────────────────────────────────
+   RESET BÁSICO
+   Remove margem/padding padrão que o navegador já vem com.
+   ───────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f7f0; /* creme bem claro */
+  color: #2b2b2b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Classe utilitária para esconder elementos (usada pelo script.js) */
+.oculto {
+  display: none;
+}
+
+/* Remove o sublinhado padrão de links que viram botões */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ─────────────────────────────────────────────────────
+   CABEÇALHO  (compartilhado pelas 3 páginas)
+   ───────────────────────────────────────────────────── */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  background-color: #2d9e5f; /* verde escuro */
+}
+
+.logo-img {
+  height: 42px;
+  width: auto;
+}
+
+.btn-voltar {
+  display: inline-block;
+  color: #000000;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-voltar:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+
+/* ─────────────────────────────────────────────────────
+   RODAPÉ  (compartilhado)
+   ───────────────────────────────────────────────────── */
+.rodape {
+  background-color: #2d9e5f;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.75rem;
+  margin-top: auto; /* empurra o rodapé para o final da página */
+}
+
+
+/* ─────────────────────────────────────────────────────
+   BOTÕES
+   ───────────────────────────────────────────────────── */
+.btn-primario {
+  display: inline-block;
+  background-color: #2d9e5f;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(45, 158, 95, 0.4);
+}
+
+.btn-primario:hover {
+  background-color: #21794a; /* verde um pouco mais escuro */
+}
+
+.btn-secundario {
+  display: inline-block;
+  background-color: transparent;
+  color: #2d9e5f;
+  border: 2px solid #2d9e5f;
+  border-radius: 50px;
+  padding: 13px 36px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-secundario:hover {
+  background-color: #2d9e5f;
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   PÁGINA: INÍCIO  (index.html)
+   ===================================================== */
+
+.main-inicio {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+}
+
+.card-intro {
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.13);
+  padding: 44px 36px;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+}
+
+.intro-icone {
+  font-size: 4rem;
+  margin-bottom: 12px;
+}
+
+.intro-titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2d9e5f;
+  margin-bottom: 6px;
+}
+
+.intro-subtitulo {
+  color: #6b7280;
+  margin-bottom: 28px;
+  font-size: 1rem;
+}
+
+/* Grade 2x2 das lixeiras na legenda */
+.legenda-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.legenda-item {
+  border-radius: 12px;
+  padding: 14px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.legenda-item.papel    { background-color: #1565c0; }
+.legenda-item.plastico { background-color: #c62828; }
+.legenda-item.vidro    { background-color: #2e7d32; }
+.legenda-item.metal    { background-color: #f57f17; }
+
+/* Caixinha em volta da imagem da lixeira: substitui o filter: drop-shadow
+   que a imagem tinha antes, simulando uma sombra suave ao redor.
+   Sem fundo, para não destoar da cor do cartão atrás dela. */
+
+
+.legenda-img {
+  width: 52px;
+  height: auto;
+  display: block;
+}
+
+/* Lista de regras */
+.regras-lista {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.regras-lista li {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   PÁGINA: JOGO  (jogo.html)
+   ===================================================== */
+
+.main-jogo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 14px 10px;
+  gap: 24px;
+}
+
+/* ── HUD (pontuação + timer) ── */
+.hud {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.placar-hud {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hud-label {
+  font-size: 0.65rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.hud-valor {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* Classe adicionada pelo script.js por um instante quando a pontuação muda.
+   Sem transform/transition: o "pulso" aqui é só a cor mudando. */
+.hud-valor.pulsar {
+  color: #a8e6c3; /* verde claro */
+}
+
+/* Timer em formato de círculo, feito só com border-radius (sem SVG).
+   O script.js troca a cor de fundo conforme o tempo vai passando. */
+.timer-bloco {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #2d9e5f;
+  border: 3px solid #a5d6a7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quando faltam poucos segundos, o script.js troca para esta classe */
+.timer-bloco.urgente {
+  background-color: #c62828;
+  border-color: #ef9a9a;
+}
+
+.timer-numero {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* ── Barra de progresso ── */
+.progresso-area {
+  width: 100%;
+  max-width: 580px;
+}
+
+.progresso-texto {
+  display: block;
+  font-size: 0.78rem;
+  color: #6b7280;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.barra-progresso {
+  height: 7px;
+  background-color: #d1e8d1;
+  border-radius: 8px;
+}
+
+.barra-preenchimento {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #2d9e5f, #21794a);
+  border-radius: 8px;
+}
+
+/* ── Arena (card + feedback) ── */
+.arena {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.instrucao {
+  font-size: 0.88rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* Card do resíduo arrastável */
+.residuo-card {
+  background-color: #ffffff;
+  border: 3px dashed #2d9e5f;
+  border-radius: 18px;
+  padding: 36px 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: grab;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.13);
+}
+
+/* Aparência enquanto o card está sendo arrastado */
+.residuo-card.arrastando {
+  opacity: 0.45;
+  cursor: grabbing;
+}
+
+.residuo-emoji {
+  font-size: 5.5rem;
+  line-height: 1;
+}
+
+.residuo-nome {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Mensagens de feedback (acerto / erro / tempo esgotado) */
+.feedback {
+  padding: 10px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  animation: entrar 0.22s ease;
+}
+
+.feedback.correto {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+  border: 2px solid #2e7d32;
+}
+
+.feedback.erro {
+  background-color: #ffcdd2;
+  color: #c62828;
+  border: 2px solid #c62828;
+}
+
+.feedback.timeout {
+  background-color: #fff9c4;
+  color: #e65100;
+  border: 2px solid #ef6c00;
+}
+
+/* Animação simples: a mensagem de feedback entra de cima para baixo */
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Lixeiras ── */
+.lixeiras-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 620px;
+}
+
+.lixeira {
+  border-radius: 14px;
+  padding: 14px 8px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+/* Cores de fundo e borda por categoria */
+.lixeira.papel    { background-color: #bbdefb; border-color: #1565c0; }
+.lixeira.plastico { background-color: #ffcdd2; border-color: #c62828; }
+.lixeira.vidro    { background-color: #c8e6c9; border-color: #2e7d32; }
+.lixeira.metal    { background-color: #fff9c4; border-color: #f57f17; }
+
+/* Caixinha em volta da imagem da lixeira, simulando a sombra que
+   antes era feita com filter: drop-shadow na própria imagem.
+   Sem fundo, para não destoar da cor da lixeira atrás dela. */
+
+.lixeira-img {
+  width: 90px;
+  height: auto;
+  display: block;
+}
+
+/* Hover e quando o resíduo está sendo arrastado por cima da lixeira */
+.lixeira:hover,
+.lixeira.drag-sobre {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+/* Animação de acerto: a lixeira dá um pequeno salto */
+@keyframes saltar {
+  0%, 100% { transform: translateY(0); }
+  40%      { transform: translateY(-14px); }
+  70%      { transform: translateY(-6px); }
+}
+
+.lixeira.acertou {
+  animation: saltar 0.45s ease;
+}
+
+/* Animação de erro: a lixeira chacoalha de um lado para o outro */
+@keyframes chacoalhar {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-8px); }
+  40%      { transform: translateX(8px); }
+  60%      { transform: translateX(-5px); }
+  80%      { transform: translateX(5px); }
+}
+
+.lixeira.errou {
+  animation: chacoalhar 0.45s ease;
+}
+
+/* Rodapé do jogo (botão voltar) */
+.rodape-jogo {
+  text-align: center;
+  padding: 10px 0 16px;
+}
+
+
+/* =====================================================
+   PÁGINA: RESULTADO  (resultado.html)
+   ===================================================== */
+
+.main-resultado {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+}
+
+.card-resultado {
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.13);
+  padding: 44px 36px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  animation: entrar 0.35s ease;
+}
+
+.resultado-icone {
+  font-size: 5rem;
+  margin-bottom: 10px;
+}
+
+.resultado-titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2d9e5f;
+  margin-bottom: 28px;
+}
+
+/* Grade 2x2 das estatísticas */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  border-radius: 12px;
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background-color: #f2f7f0;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.stat-valor {
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Cor específica para o número de cada estatística */
+.stat-pts  .stat-valor { color: #2d9e5f; }
+.stat-ok   .stat-valor { color: #2e7d32; }
+.stat-err  .stat-valor { color: #c62828; }
+.stat-time .stat-valor { color: #e65100; }
+
+.resultado-mensagem {
+  font-style: italic;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+/* Botões lado a lado */
+.resultado-botoes {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE – CELULAR
+   ===================================================== */
+@media (max-width: 560px) {
+
+  .logo-img {
+    height: 34px;
+  }
+
+  /* HUD */
+  .hud-valor {
+    font-size: 1.6rem;
+  }
+
+  .timer-bloco {
+    width: 46px;
+    height: 46px;
+  }
+
+  .timer-numero {
+    font-size: 1rem;
+  }
+
+  /* Cards */
+  .card-intro,
+  .card-resultado {
+    padding: 28px 18px;
+  }
+
+  .intro-titulo,
+  .resultado-titulo {
+    font-size: 1.6rem;
+  }
+
+  /* Lixeiras: 2 colunas no celular em vez de 4 */
+  .lixeiras-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 320px;
+  }
+
+  .lixeira-img {
+    width: 52px;
+  }
+
+  /* Card do resíduo */
+  .residuo-card {
+    padding: 18px 28px;
+  }
+
+  .residuo-emoji {
+    font-size: 3.2rem;
+  }
+
+  /* Botões da tela de resultado empilhados */
+  .resultado-botoes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primario,
+  .btn-secundario {
+    width: 100%;
+    text-align: center;
+  }
+}

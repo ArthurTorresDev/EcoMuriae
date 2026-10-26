@@ -1,0 +1,312 @@
+/* Reseta as margens e força o body a ocupar toda a tela */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #0ea5e9; /* Coloquei um azul temporário para testarmos se o CSS carregou */
+}
+
+/* Deixa a div do planeta ocupando o fundo inteiro */
+#id-da-sua-div-do-planeta {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Camada da interface por cima do planeta */
+.interface-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    pointer-events: none; /* Permite interagir com o planeta por trás */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+/* Caixas brancas da interface */
+.interface-container header, .legenda {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    pointer-events: auto; /* Permite interagir com os textos e botões */
+}
+
+.interface-container header {
+    max-width: 420px;
+}
+
+.interface-container header h1 {
+    font-size: 1.5rem;
+    color: #047857;
+    margin: 0 0 8px 0;
+}
+
+.interface-container header p {
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Legenda */
+.legenda {
+    width: 280px;
+}
+
+.legenda h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 10px 0;
+    color: #475569;
+}
+
+.escala-gradiente {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #22c55e, #eab308, #f97316, #dc2626);
+    margin-bottom: 5px;
+}
+
+.escala-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.item-legenda {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 0.78rem;
+    color: #334155;
+}
+
+.cor-box {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+
+.fonte {
+    font-size: 0.65rem;
+    color: #94a3b8;
+    margin-top: 10px;
+    text-align: right;
+}
+@media (max-width: 768px) {
+  .card-lateral-oposto {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    max-height: none;
+  }
+}
+.item-ranking {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  margin: 4px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+}
+
+.item-ranking:hover {
+  background: rgba(56, 189, 248, 0.2); /* Fundo azul claro ao passar o rato */
+  transform: translateX(4px);
+}
+
+.badge-rank {
+  background: #334155;
+  color: #f8fafc;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 11px;
+}
+/* 1. Reset básico para tirar margens da tela */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* Fundo preto enquanto o mapa carrega */
+  overflow: hidden; /* Evita barras de rolagem na tela principal */
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 2. FORÇAR A DIV DO PLANETA A OCUPAR A TELA TODA */
+#id-da-sua-div-do-planeta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1; /* Fica no fundo */
+}
+
+/* 3. Ajustar o container da esquerda (EcoGlobe 3D e legenda antiga) */
+.interface-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  z-index: 10; /* Garante que fica em cima do planeta */
+  pointer-events: none; /* Deixa clicar através do container se necessário */
+}
+
+/* Permitir cliques dentro dos elementos internos do container esquerdo */
+header, .legenda {
+  pointer-events: auto;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 12px;
+  color: #fff;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* 4. O CARD DO RANKING (LADO DIREITO OPOSTO) */
+.card-lateral-oposto {
+  position: absolute;
+  top: 20px;
+  right: 20px; /* Alinhado estritamente na direita */
+  width: 320px;
+  max-height: 85vh;
+  overflow-y: auto;
+  z-index: 10; /* Em cima do planeta */
+  
+  /* Vidro fosco */
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: #f8fafc;
+  padding: 20px;
+}
+
+/* Customização dos itens do ranking que aparecem via JS */
+.item-ranking {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  margin: 6px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+}
+.item-ranking:hover {
+  background: rgba(56, 189, 248, 0.2);
+  transform: translateX(4px);
+}
+.badge-rank {
+  background: #334155;
+  color: #f8fafc;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+.legenda-cor {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+/* Container da lista com scroll */
+#ranking-lista {
+  max-height: 220px; /* Define uma altura máxima para não quebrar o layout */
+  overflow-y: auto;  /* Ativa a barra de rolagem vertical */
+  margin: 15px 0;
+  padding-right: 5px;
+}
+
+/* Customização da barra de rolagem (opcional, para combinar com o tema escuro) */
+#ranking-lista::-webkit-scrollbar {
+  width: 6px;
+}
+#ranking-lista::-webkit-scrollbar-thumb {
+  background: #2e374a;
+  border-radius: 10px;
+}
+
+/* Linha de cada país */
+.ranking-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: 14px;
+}
+
+/* Efeito de passar o mouse por cima */
+.ranking-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Estilo do número da posição */
+.ranking-posicao {
+  font-weight: bold;
+  color: #ff4757; /* Cor de destaque para o número */
+  min-width: 35px;
+}
+
+/* Estilo do nome do país */
+.ranking-nome {
+  flex: 1;
+  color: #f1f2f6;
+}
+
+/* Estilo do valor gha/pessoa */
+.ranking-valor {
+  color: #a4b0be;
+  font-size: 12px;
+}
+.ranking-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}

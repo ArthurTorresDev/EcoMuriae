@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoMuriaé - Quiz de Pegada Ecológica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="mostrarPergunta()">
+ 
+  <header class="cabecalho">
+    <div class="logo-area">
+      <img src="../img/EcoMuriae.png" alt="Logo EcoMuriaé" class="logo-img" />
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="cartao">
+
+      <!-- Texto tipo "Pergunta 3 de 20" -->
+      <p id="progressoTexto"></p>
+
+      <!-- Barra de progresso simples -->
+      <div class="barraProgressoFundo">
+        <div id="barraProgresso" class="barraProgressoPreenchida"></div>
+      </div>
+
+      <h2 id="temaAtual"></h2>
+
+      <p id="textoPergunta"></p>
+
+      <!-- Aqui os botões de alternativa são criados pelo script.js -->
+      <div id="areaAlternativas" class="areaAlternativas"></div>
+
+      <div class="areaBotoesNavegacao">
+        <button id="botaoVoltar" class="botaoSecundario" onclick="perguntaAnterior()">Voltar</button>
+        <button id="botaoProxima" class="botaoPrincipal" onclick="proximaPergunta()">Próxima pergunta</button>
+      </div>
+
+    </div>
+
+  </div>
+  <footer class="rodape">
+    <p>EcoMuriaé &copy; 2026 &nbsp;·&nbsp; Educação Ambiental para Muriaé</p> 
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
